@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WatchaTest</string>
+    <string name="resource_path">android.resource://com.changgyu.watcha</string>
+    <string name="title_track_list">Track List</string>
+    <string name="title_track_favorite">Favorite Track</string>
+
+</resources>

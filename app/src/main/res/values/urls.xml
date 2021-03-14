@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--
+    test를 위해 git ignore를 하지 않았습니다.
+-->
+    <string name="server_api_url">https://itunes.apple.com/</string>
+</resources>

@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/trackListFragment"
+        android:icon="@drawable/menu_icon_list"
+        android:title="트랙 리스트"/>
+
+    <item
+        android:id="@+id/trackFavoriteFragment"
+        android:icon="@drawable/menu_icon_favorite"
+        android:title="찜한 목록"/>
+</menu>
