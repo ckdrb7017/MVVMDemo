@@ -1,7 +1,6 @@
 package com.changgyu.watcha.di
 
 import com.changgyu.watcha.R
-import com.changgyu.watcha.WatchaTestApplication
 import com.changgyu.watcha.WatchaTestApplication.Companion.watchaTestApp
 import com.changgyu.watcha.data.network.ServerApi
 import com.changgyu.watcha.data.network.ServerApiImpl
@@ -27,18 +26,19 @@ object NetworkModule {  //네트워크통신에 사용되는 Okhttp, Retrofit, A
 
     @Singleton
     @Provides
-    fun provideOkhttp() : OkHttpClient{
+    fun provideOkhttp(): OkHttpClient {
         return OkHttpClient.Builder()
             .connectTimeout(1, TimeUnit.MINUTES)
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(15, TimeUnit.SECONDS)
-            .addInterceptor(HttpLoggingInterceptor().
-                setLevel(HttpLoggingInterceptor.Level.BODY)).build()
+            .addInterceptor(
+                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+            ).build()
     }
 
     @Singleton
     @Provides
-    fun provideApiServerNetwork(okHttpClient: OkHttpClient) : ServerApiService {
+    fun provideApiServerNetwork(okHttpClient: OkHttpClient): ServerApiService {
         return Retrofit.Builder()
             .baseUrl(watchaTestApp!!.getString(R.string.server_api_url))
             .addConverterFactory(GsonConverterFactory.create())
@@ -53,5 +53,6 @@ object NetworkModule {  //네트워크통신에 사용되는 Okhttp, Retrofit, A
     fun provideApiServerModel(okHttpClient: OkHttpClient): ServerApi {
         return ServerApiImpl(provideApiServerNetwork(okHttpClient))
     }
+
 
 }
