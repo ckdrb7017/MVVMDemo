@@ -32,4 +32,9 @@ object TrackBindingAdapter {
        }
     }
 
+    @BindingAdapter( "setImage")
+    @JvmStatic fun setImage(view: ImageView, url: String) {
+        setImage(view.context, url, view)
+    }
+
 }

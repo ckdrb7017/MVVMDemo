@@ -36,8 +36,8 @@ class TrackListFragment
 
             }
         }
-        binding.trackListRV.adapter = TrackListAdapter(mActivity!!, clickListener)
-        binding.trackListRV.layoutManager = LinearLayoutManager(mActivity)
+        binding.trackListRV.adapter = TrackListAdapter(requireContext(), clickListener)
+        binding.trackListRV.layoutManager = LinearLayoutManager(requireContext())
 
     }
 

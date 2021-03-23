@@ -34,10 +34,7 @@ class FavoriteTrackAdapter(private val context: Context, private val clickListen
 
     inner class FavoriteTrackHolder (val binding : ItemTrackFavoriteBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(item: FavoriteTrackEntity){
-            binding.artistName.text = item.artistName
-            binding.collectionName.text = item.collectionName
-            binding.trackName.text = item.trackName
-            setImage(context ,item.artworkUrl, binding.artwork)
+            binding.entity = item
             binding.executePendingBindings()
         }
     }

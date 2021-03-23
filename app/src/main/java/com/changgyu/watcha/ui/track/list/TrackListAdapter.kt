@@ -31,10 +31,6 @@ class TrackListAdapter(private val context: Context, private val clickListener: 
     inner class TrackListHolder (val binding : ItemTrackListBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(item: TrackEntity){
             binding.entity = item
-            binding.artistName.text = item.artistName
-            binding.collectionName.text = item.collectionName
-            binding.trackName.text = item.trackName
-            setImage(context ,item.artworkUrl100, binding.artwork)
             binding.favoriteButton.setOnClickListener {
                 clickListener.onFavoriteClicked(item.trackId, item)
                 item.isFavorite = !item.isFavorite!!

@@ -30,8 +30,8 @@ class FavoriteTrackFragment
               viewModel.deleteFavoriteTrackById(trackId)
             }
         }
-        binding.favoriteTrackRV.adapter = FavoriteTrackAdapter(mActivity!!, clickListener)
-        binding.favoriteTrackRV.layoutManager = LinearLayoutManager(mActivity)
+        binding.favoriteTrackRV.adapter = FavoriteTrackAdapter(requireContext(), clickListener)
+        binding.favoriteTrackRV.layoutManager = LinearLayoutManager(requireContext())
     }
 
     override fun initStart() {}
