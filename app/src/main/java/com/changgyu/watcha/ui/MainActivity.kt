@@ -1,5 +1,6 @@
 package com.changgyu.watcha.ui
 
+import androidx.activity.viewModels
 import com.changgyu.watcha.R
 import com.changgyu.watcha.common.utils.changeFragment
 import com.changgyu.watcha.databinding.ActivityMainBinding
@@ -12,16 +13,23 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
-    @Inject
-    lateinit var viewModel: MainViewModel
+    //@Inject
+    private val viewModel: MainViewModel  by viewModels()
     private val tackListFragment = TrackListFragment()
     private val favoriteTrackFragment = FavoriteTrackFragment()
 
     override fun initActivity() {
-        binding.viewmodel = viewModel
         initBottomNavItemClick()
-        changeFragment(this, binding.fragmentContainer, tackListFragment)
-        viewModel.setTitleText(getString(R.string.title_track_list))
+        if(viewModel.isInitialized){
+            binding.viewmodel = viewModel
+            changeFragment(this, binding.fragmentContainer, viewModel.getCurrentFragment())
+        }else{
+            binding.viewmodel = viewModel
+            changeFragment(this, binding.fragmentContainer, tackListFragment)
+            viewModel.setCurrentFragment(tackListFragment)
+            viewModel.setTitleText(getString(R.string.title_track_list))
+            viewModel.isInitialized = true
+        }
     }
 
     private fun initBottomNavItemClick() {
@@ -29,10 +37,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
             when (it.itemId) {
                 R.id.trackListFragment -> {
                     changeFragment(this, binding.fragmentContainer, tackListFragment)
+                    viewModel.setCurrentFragment(tackListFragment)
                     viewModel.setTitleText(getString(R.string.title_track_list))
                 }
                 R.id.trackFavoriteFragment -> {
                     changeFragment(this, binding.fragmentContainer, favoriteTrackFragment)
+                    viewModel.setCurrentFragment(favoriteTrackFragment)
                     viewModel.setTitleText(getString(R.string.title_track_favorite))
                 }
             }

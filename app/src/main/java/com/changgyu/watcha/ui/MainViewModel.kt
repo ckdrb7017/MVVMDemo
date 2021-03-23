@@ -1,5 +1,6 @@
 package com.changgyu.watcha.ui
 
+import androidx.fragment.app.Fragment
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -19,6 +20,8 @@ import kotlin.random.Random
 
 class MainViewModel @Inject constructor() : ViewModel() {
 
+    var isInitialized = false
+    private lateinit var currentFragment: Fragment
     private var _titleText : MutableLiveData<String> = MutableLiveData()
     val titleText : LiveData<String> = _titleText
 
@@ -26,4 +29,11 @@ class MainViewModel @Inject constructor() : ViewModel() {
         _titleText.value = title
     }
 
+    fun setCurrentFragment(fragment: Fragment){
+        currentFragment = fragment
+    }
+
+    fun getCurrentFragment(): Fragment{
+        return currentFragment
+    }
 }

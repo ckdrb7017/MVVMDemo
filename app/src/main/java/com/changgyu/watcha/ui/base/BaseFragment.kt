@@ -17,7 +17,7 @@ import androidx.fragment.app.Fragment
 
 abstract class BaseFragment<B : ViewDataBinding, A: Activity>(@LayoutRes private val layoutResId: Int): Fragment(){
     lateinit var binding : B
-    var mActivity: A?= null
+    //var mActivity: A?= null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,7 +42,7 @@ abstract class BaseFragment<B : ViewDataBinding, A: Activity>(@LayoutRes private
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if(context is Activity) mActivity  = context as A
+        //if(context is Activity) mActivity  = context as A
     }
 
     override fun onStart() {
@@ -63,7 +63,7 @@ abstract class BaseFragment<B : ViewDataBinding, A: Activity>(@LayoutRes private
     override fun onDestroy() {
         super.onDestroy()
         initDestroy()
-        mActivity = null
+        //mActivity = null
     }
 
 }
