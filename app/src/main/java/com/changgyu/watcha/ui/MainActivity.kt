@@ -20,11 +20,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     override fun initActivity() {
         initBottomNavItemClick()
+        binding.viewmodel = viewModel
         if(viewModel.isInitialized){
-            binding.viewmodel = viewModel
             changeFragment(this, binding.fragmentContainer, viewModel.getCurrentFragment())
         }else{
-            binding.viewmodel = viewModel
             changeFragment(this, binding.fragmentContainer, tackListFragment)
             viewModel.setCurrentFragment(tackListFragment)
             viewModel.setTitleText(getString(R.string.title_track_list))
