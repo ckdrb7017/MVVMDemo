@@ -63,7 +63,7 @@ class LocalDBUnitTest {
         return Room.databaseBuilder(
             context,
             InitDatabase::class.java,
-            "watchatest.db"
+            "mvvmdemo.db"
         ) .addCallback(object : RoomDatabase.Callback() {
             override fun onCreate(db: SupportSQLiteDatabase) {
                 super.onCreate(db)

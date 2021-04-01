@@ -10,12 +10,12 @@ class MyApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        watchaTestApp = this
+        myApp = this
         Timber.plant(Timber.DebugTree())
     }
 
     companion object {
-        var watchaTestApp: MyApplication? = null
+        var myApp: MyApplication? = null
 
     }
 }

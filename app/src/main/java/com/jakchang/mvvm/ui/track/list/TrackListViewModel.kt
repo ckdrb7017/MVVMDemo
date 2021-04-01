@@ -59,7 +59,7 @@ class TrackListViewModel @Inject constructor(
             val favoriteTrack = convertTrackToFavoriteTrack(trackEntity)
             val result = localRepository.insertFavoriteTrack(favoriteTrack)
             if (result > 0) showToast(
-                MyApplication.watchaTestApp!!.applicationContext,
+                MyApplication.myApp!!.applicationContext,
                 "추가되었습니다."
             )
         }
@@ -70,7 +70,7 @@ class TrackListViewModel @Inject constructor(
         viewModelScope.launch {
             val result = localRepository.deleteFavoriteTrackById(trackId)
             if (result > 0) showToast(
-                MyApplication.watchaTestApp!!.applicationContext,
+                MyApplication.myApp!!.applicationContext,
                 "삭제되었습니다."
             )
         }

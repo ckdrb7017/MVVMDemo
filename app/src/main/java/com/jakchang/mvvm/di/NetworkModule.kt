@@ -1,7 +1,7 @@
 package com.jakchang.mvvm.di
 
 import com.jakchang.mvvm.R
-import com.jakchang.mvvm.MyApplication.Companion.watchaTestApp
+import com.jakchang.mvvm.MyApplication.Companion.myApp
 import com.jakchang.mvvm.data.network.ServerApi
 import com.jakchang.mvvm.data.network.ServerApiImpl
 import com.jakchang.mvvm.data.network.ServerApiService
@@ -40,7 +40,7 @@ object NetworkModule {
     @Provides
     fun provideApiServerNetwork(okHttpClient: OkHttpClient): ServerApiService {
         return Retrofit.Builder()
-            .baseUrl(watchaTestApp!!.getString(R.string.server_api_url))
+            .baseUrl(myApp!!.getString(R.string.server_api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()

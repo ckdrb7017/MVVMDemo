@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WatchaTest</string>
+    <string name="app_name">MVVDemo</string>
     <string name="resource_path">android.resource://com.jakchang.mvvm</string>
     <string name="title_track_list">Track List</string>
     <string name="title_track_favorite">Favorite Track</string>
