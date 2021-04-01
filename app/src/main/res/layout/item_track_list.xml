@@ -5,7 +5,7 @@
     <data>
         <variable
             name="entity"
-            type="com.changgyu.watcha.data.entity.TrackEntity" />
+            type="com.jakchang.mvvm.data.entity.TrackEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

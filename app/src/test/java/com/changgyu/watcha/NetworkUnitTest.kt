@@ -1,14 +1,14 @@
-package com.changgyu.watcha
+package com.jakchang.mvvm
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.changgyu.watcha.common.utils.showLog
-import com.changgyu.watcha.data.entity.TrackListRequestEntity
-import com.changgyu.watcha.data.network.ServerApi
-import com.changgyu.watcha.data.network.ServerApiImpl
-import com.changgyu.watcha.data.network.ServerApiService
-import com.changgyu.watcha.data.repository.ServerRepositoryImpl
-import com.changgyu.watcha.di.NetworkModule
-import com.changgyu.watcha.ui.track.list.SearchType
+import com.jakchang.mvvm.common.utils.showLog
+import com.jakchang.mvvm.data.entity.TrackListRequestEntity
+import com.jakchang.mvvm.data.network.ServerApi
+import com.jakchang.mvvm.data.network.ServerApiImpl
+import com.jakchang.mvvm.data.network.ServerApiService
+import com.jakchang.mvvm.data.repository.ServerRepositoryImpl
+import com.jakchang.mvvm.di.NetworkModule
+import com.jakchang.mvvm.ui.track.list.SearchType
 import dagger.Provides
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

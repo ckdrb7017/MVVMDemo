@@ -20,4 +20,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keep class * extends com.google.gson.TypeAdapter
--keep class com.changgyu.watcha.data.entity.* { <fields>; }
+-keep class com.jakchang.mvvm.data.entity.* { <fields>; }

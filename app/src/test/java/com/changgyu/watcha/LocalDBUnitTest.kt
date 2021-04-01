@@ -1,4 +1,4 @@
-package com.changgyu.watcha
+package com.jakchang.mvvm
 
 import android.content.Context
 import androidx.room.Room
@@ -6,12 +6,12 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.changgyu.watcha.data.entity.FavoriteTrackEntity
-import com.changgyu.watcha.data.local.InitDatabase
-import com.changgyu.watcha.data.local.LocalApi
-import com.changgyu.watcha.data.local.LocalApiImpl
-import com.changgyu.watcha.data.repository.LocalRepositoryImpl
-import com.changgyu.watcha.di.LocalDBModule
+import com.jakchang.mvvm.data.entity.FavoriteTrackEntity
+import com.jakchang.mvvm.data.local.InitDatabase
+import com.jakchang.mvvm.data.local.LocalApi
+import com.jakchang.mvvm.data.local.LocalApiImpl
+import com.jakchang.mvvm.data.repository.LocalRepositoryImpl
+import com.jakchang.mvvm.di.LocalDBModule
 import dagger.Provides
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope

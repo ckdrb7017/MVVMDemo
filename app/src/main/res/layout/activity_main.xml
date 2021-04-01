@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.changgyu.watcha.ui.MainViewModel" />
+            type="com.jakchang.mvvm.ui.MainViewModel" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"
